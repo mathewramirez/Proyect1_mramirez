@@ -50,7 +50,7 @@
     <ClInclude Include="Schedule.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="Registrer.h">
+    <ClInclude Include="Register.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Consult.h">

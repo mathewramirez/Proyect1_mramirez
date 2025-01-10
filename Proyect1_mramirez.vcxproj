@@ -139,7 +139,7 @@
     <ClInclude Include="Consult.h" />
     <ClInclude Include="Course.h" />
     <ClInclude Include="Program.h" />
-    <ClInclude Include="Registrer.h" />
+    <ClInclude Include="Register.h" />
     <ClInclude Include="Schedule.h" />
     <ClInclude Include="Student.h" />
   </ItemGroup>
