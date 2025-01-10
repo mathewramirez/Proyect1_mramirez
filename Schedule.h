@@ -10,13 +10,13 @@ private:
 public:
 	Schedule();
 	Schedule(int hour_Inicial, int classroom, int hour_Final, int day);
-	int getHourInicial(int hour_Inicial);
-	int getClassroom(int classroom);
-	int getHourFinal(int hour_Final);
-	int getDay(int day);
-	int setHourInicial(int hour_Inicial);
-	int setClassroom(int classroom);
-	int setHourFinal(int hour_Final);
-	int setDay(int day);
+	int getHourInicial();
+	int getClassroom();
+	int getHourFinal();
+	int getDay();
+	void setHourInicial(int hour_Inicial);
+	void setClassroom(int classroom);
+	void setHourFinal(int hour_Final);
+	void setDay(int day);
 };
 

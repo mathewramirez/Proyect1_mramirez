@@ -5,6 +5,8 @@
 
 int main()
 {
-
+	Register register1;
+	register1.addCourse("juan", "324", "ingenieria", 4);
+	register1.ShowRegister();
 }
 

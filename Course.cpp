@@ -12,22 +12,22 @@ Course::Course(std::string professor, std::string code, std::string name_Course,
 	this->Credits =credits ;
 }
 
-std::string Course::getProfessor(std::string professor)
+std::string Course::getProfessor()
 {
 	return Professor;
 }
 
-std::string Course::getCode(std::string code)
+std::string Course::getCode()
 {
 	return Code;
 }
 
-std::string Course::getnameCourse(std::string name_Course)
+std::string Course::getnameCourse()
 {
 	return nameCourse; 
 }
 
-int Course::getCredits(int credits)
+int Course::getCredits()
 {
 	return Credits; 
 }

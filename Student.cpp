@@ -12,22 +12,22 @@ Student::Student(std::string name, std::string id, std::string career, int level
 {
 }
 
-std::string Student::getName(std::string name)
+std::string Student::getName()
 {
 	return Name;
 }
 
-std::string Student::getId(std::string id)
+std::string Student::getId()
 {
 	return Id;
 }
 
-std::string Student::getCarrer(std::string career)
+std::string Student::getCareer()
 {
 	return Career;
 }
 
-int Student::getLevel(int level)
+int Student::getLevel()
 {
 	return Level;
 }

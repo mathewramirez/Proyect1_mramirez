@@ -12,42 +12,42 @@ Schedule::Schedule(int hour_Inicial, int classroom, int hour_Final, int day)
 	this->hourInicial = hour_Inicial;
 }
 
-int Schedule::getHourInicial(int hour_Inicial)
+int Schedule::getHourInicial()
 {
 	return hourInicial;
 }
 
-int Schedule::getClassroom(int classroom)
+int Schedule::getClassroom()
 {
 	return ClassRoom;
 }
 
-int Schedule::getHourFinal(int hour_Final)
+int Schedule::getHourFinal()
 {
 	return hourFinal;
 }
 
-int Schedule::getDay(int day)
+int Schedule::getDay()
 {
 	return Day;
 }
 
-int Schedule::setHourInicial(int hour_Inicial)
+void Schedule::setHourInicial(int hour_Inicial)
 {
 	this->hourInicial = hour_Inicial;
 }
 
-int Schedule::setClassroom(int classroom)
+void Schedule::setClassroom(int classroom)
 {
 	this->ClassRoom = classroom;
 }
 
-int Schedule::setHourFinal(int hour_Final)
+void Schedule::setHourFinal(int hour_Final)
 {
 	this->hourFinal = hour_Final;
 }
 
-int Schedule::setDay(int day)
+void Schedule::setDay(int day)
 {
 	this->Day = day;
 }

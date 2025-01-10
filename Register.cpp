@@ -1,12 +1,5 @@
 #include "Register.h"
 
-Register::Register()
-{
-}
-
-Register::Register(Student student, Course course, Schedule schedule, int course_Value)
-{
-}
 
 Register::Register()
 {
@@ -16,12 +9,13 @@ Register::Register()
 	scheduleCount = 0;
 }
 
-void Register::addStudents(std::string name, std::string id, std::string carrer, int level)
+
+void Register::addStudents(std::string name, std::string id, std::string career, int level)
 {
 	Student student;
 	student.setName(name);
 	student.setId(id);
-	student.setCareer(name);
+	student.setCareer(career);
 	student.setLevel(level);
 	studentPresent[studentsCount] = student;
 	studentsCount++;
@@ -58,8 +52,21 @@ int Register::getCourseValue(int course_Value)
 
 void Register::costCalculator()
 {
-	courseValue = Credits * 12,512;
+	courseValue = Credits * 12.512;
 	std::cout << "El costo de matricula es: " << courseValue << std:: endl;
 }
+
+
+void Register::ShowRegister()
+{
+	for (int i = 0; i < studentsCount; i++) {
+		std::cout << "Student " << i + 1 << ": "
+			<< studentPresent[i].getName() << ", "
+			<< studentPresent[i].getId() << ", "
+			<< studentPresent[i].getCareer() << ", "
+			<< studentPresent[i].getLevel() << std::endl;
+	}
+}
+
 
 
