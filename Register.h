@@ -1,5 +1,8 @@
 #pragma once
+#include "Student.h"
 #include "Schedule.h"
+#include "Course.h"
+#include <iostream>
 class Register
 {
 private:
@@ -19,6 +22,8 @@ public:
 	void addSchedule(int hour_Inicial, int classroom, int hour_Final, int day);
 	int getCourseValue(int course_Value);
 	void costCalculator();
-	void ShowRegister(); 
+	void ShowstudentPresent();
+	void courseofLevel(int level);
+	void setCoursePresents(int courseCount); 
 };
 

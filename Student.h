@@ -1,5 +1,6 @@
 #pragma once
-#include "Program.h"
+#include <iostream>
+
 class Student
 {
 private:

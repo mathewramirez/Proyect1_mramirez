@@ -1,8 +1,13 @@
 #pragma once
 #include "Student.h"
+#include"Register.h"
+const int NUM_COURSES = 5;
+const int COURSE_COLUMNS = 2;
+
 class Course
 {
 private:
+
 	std::string Professor;
 	std::string Code;
 	std::string nameCourse;
@@ -18,5 +23,7 @@ public:
 	void setCode(std::string code);
 	void setnameCourse(std::string name_Course);
 	void setCredits(int credits);
+	void loadCourses(std::string Courses[NUM_COURSES][COURSE_COLUMNS]);
+	bool validCourse(const std::string& code, std::string Courses[NUM_COURSES][COURSE_COLUMNS]);
 };
 

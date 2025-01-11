@@ -10,6 +10,10 @@ Student::Student()
 
 Student::Student(std::string name, std::string id, std::string career, int level)
 {
+	this->Name = name;
+	this->Id = id;
+	this->Career = career;
+	this->Level = level;
 }
 
 std::string Student::getName()

@@ -2,7 +2,12 @@
 
 Schedule::Schedule()
 {
+	Day = 0;
+	ClassRoom = 0;
+	hourFinal = 0;
+	hourInicial =0 ;
 }
+
 
 Schedule::Schedule(int hour_Inicial, int classroom, int hour_Final, int day)
 {

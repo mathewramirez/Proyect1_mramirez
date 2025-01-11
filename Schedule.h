@@ -18,5 +18,6 @@ public:
 	void setClassroom(int classroom);
 	void setHourFinal(int hour_Final);
 	void setDay(int day);
+	
 };
 

@@ -1,12 +1,19 @@
 // Proyect1_mramirez.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
+#include "Register.h"
+#include "Student.h"
+#include "Schedule.h"
+#include "Course.h"
 #include "Program.h"
 #include <iostream>
 
 int main()
 {
 	Register register1;
-	register1.addCourse("juan", "324", "ingenieria", 4);
-	register1.ShowRegister();
+	Course course1;
+	Program program;
+	program.program();
+
+	
 }
 

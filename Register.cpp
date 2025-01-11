@@ -7,16 +7,15 @@ Register::Register()
 	courseValue = 0;
 	studentsCount = 0;
 	scheduleCount = 0;
+	Credits = 0;
+	
 }
 
 
 void Register::addStudents(std::string name, std::string id, std::string career, int level)
 {
-	Student student;
-	student.setName(name);
-	student.setId(id);
-	student.setCareer(career);
-	student.setLevel(level);
+	Student student(name,id,career,level);
+
 	studentPresent[studentsCount] = student;
 	studentsCount++;
 }
@@ -27,7 +26,7 @@ void Register::addCourse(std::string professor, std::string code, std::string na
 	course.setProfessor(professor);
 	course.setCode(code);
 	course.setnameCourse(name_Course);
-	this->courseValue = credits;
+	this->Credits = credits; 
 	coursePresent[courseCount] = course;
 	courseCount++;
 
@@ -36,10 +35,10 @@ void Register::addCourse(std::string professor, std::string code, std::string na
 void Register::addSchedule(int hour_Inicial, int classroom, int hour_Final, int day)
 {
 	Schedule schedule;
-	schedule.setHourInicial(hour_Inicial);
-	schedule.setHourFinal(hour_Final);
-	schedule.setClassroom(classroom);
-	schedule.setDay(day);
+	schedule.getHourInicial();
+	schedule.getHourFinal();
+	schedule.getClassroom();
+	schedule.getDay();
 	schedulePresent[scheduleCount] = schedule;
 	scheduleCount++;
 
@@ -56,8 +55,7 @@ void Register::costCalculator()
 	std::cout << "El costo de matricula es: " << courseValue << std:: endl;
 }
 
-
-void Register::ShowRegister()
+void Register::ShowstudentPresent()
 {
 	for (int i = 0; i < studentsCount; i++) {
 		std::cout << "Student " << i + 1 << ": "
@@ -68,5 +66,16 @@ void Register::ShowRegister()
 	}
 }
 
+void Register::courseofLevel(int level)
+{
+	
+}
+
+void Register::setCoursePresents(int courseCount)
+{
+
+	this->courseCount = courseCount;
+	coursePresent[courseCount];
+}
 
 
