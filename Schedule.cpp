@@ -4,11 +4,11 @@
 
 
 Schedule::Schedule(){ 
-    hourInicial = 0;
-    hourFinal = 0;
-    classRoom = 0;
-    hourCount=0;
-       day= "";  
+    this->hourInicial = 0;
+  this->hourFinal = 0;
+ this->classRoom = 0;
+    this->hourCount=0;
+       this->day= "";  
 
 }
 void Schedule::addAvailableHour(int availableHours[5][2], int& hourCount, int hourInicial, int hourFinal) {

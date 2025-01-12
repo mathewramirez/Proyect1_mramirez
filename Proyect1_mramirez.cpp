@@ -9,11 +9,6 @@
 
 int main()
 {
-	Register register1;
-	Course course1;
-	Program program;
-	program.program();
-
 	
 }
 

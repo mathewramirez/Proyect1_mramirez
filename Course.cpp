@@ -8,9 +8,12 @@ Course::Course() {
     Credits = 0;
 }
 
-// Constructor parametrizado
-Course::Course(const std::string& prof, const std::string& code, const std::string& name, int credits)
-    : Professor(prof), Code(code), nameCourse(name), Credits(credits) {
+
+Course::Course(std::string& prof, std::string& code, std::string& name, int credits){
+this->Professor = prof;
+this->Code = code;
+this->nameCourse = name;
+this->Credits = credits;
 }
 
 // Setters
