@@ -4,24 +4,20 @@
 class Schedule
 {
 private:
-	std::string Schendules[5];
 	int hourInicial;
-	int ClassRoom;
 	int hourFinal;
-	std::string Day;
-	int hours[9][2];
+	int classRoom;
+	std::string day;
+	int availableHours[5][2]; 
+	std::string coursePerSchedule[5];
+	int hourCount; 
 public:
 	Schedule();
-	Schedule(int hour_Inicial, int classroom, int hour_Final, std::string day);
-	int getHourInicial();
-	int getClassroom();
-	int getHourFinal();
-	std::string getDay();
-	void setHourInicial(int hour_Inicial);
-	void setClassroom(int classroom);
-	void setHourFinal(int hour_Final);
-	void setDay(std::string day);
-	void initializeSchedules(std::string schendules[5]);
-	void getHours(int hours[9][2]);
+	void assignCourseToSchedule(std::string coursePerSchedule[5],int scheduleIndex, std::string courseName);
+	void addAvailableHour(int availableHours[5][2], int& hourCount, int hourInicial, int hourFinal);
+	void setScheduleDetails(int hourInicial, int hourFinal, int classroom, std::string day);
+	int getcalculateDuration();
+	void displaySchedule(int availableHours[5][2], std::string coursePerSchedule[5]);
+	bool isHourAvailable(int availableHours[5][2], int hourCount, int hourInicial, int hourFinal);
 };
 

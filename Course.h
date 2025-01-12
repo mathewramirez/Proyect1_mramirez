@@ -26,6 +26,6 @@ public:
 	void setCredits(int credits);
 	void loadCourses(std::string Courses[NUM_COURSES][COURSE_COLUMNS]);
 	bool validCourse(std::string code, std::string Courses[NUM_COURSES][COURSE_COLUMNS]);
-	void showCourses(std::string professor, std::string code, std::string name_Course, int credits);
+	void showCourses();
 };
 

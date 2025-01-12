@@ -76,7 +76,7 @@ void Course::loadCourses(std::string Courses[NUM_COURSES][COURSE_COLUMNS])
         std::cout << "Error: Código de curso no encontrado.\n";
         return false;
     }
-    void Course::showCourses(std::string professor, std::string code, std::string name_Course, int credits) {
+    void Course::showCourses() {
         std::cout << "Profesor: " << Professor << "\n"
             << "Código del Curso: " << Code << "\n"
             << "Nombre del Curso: " << nameCourse << "\n"

@@ -1,82 +1,79 @@
 #include "Schedule.h"
 
-Schedule::Schedule()
-{
-	Day = "";
-	ClassRoom = 0;
-	hourFinal = 0;
-	hourInicial =0 ;
-}
 
 
-Schedule::Schedule(int hour_Inicial, int classroom, int hour_Final, std::string day)
-{
-	this->Day = day;
-	this->ClassRoom = classroom;
-	this->hourFinal= hour_Final;
-	this->hourInicial = hour_Inicial;
+
+Schedule::Schedule(){ 
+    hourInicial = 0;
+    hourFinal = 0;
+    classRoom = 0;
+    hourCount=0;
+       day= "";  
+
+}
+void Schedule::addAvailableHour(int availableHours[5][2], int& hourCount, int hourInicial, int hourFinal) {
+    if (hourCount < 5) {
+        availableHours[hourCount][0] = hourInicial;
+        availableHours[hourCount][1] = hourFinal;
+        hourCount++;
+    }
+    else {
+        std::cout << "No se pueden agregar más bloques de horarios.\n";
+    }
 }
 
-int Schedule::getHourInicial()
-{
-	return hourInicial;
+void Schedule::displaySchedule(int availableHours[5][2], std::string coursePerSchedule[5]) {
+    std::cout << "Día: " << day << "\n"
+        << "Aula: " << classRoom << "\n"
+        << "Hora Inicial: " << hourInicial << ":00\n"
+        << "Hora Final: " << hourFinal << ":00\n";
+
+    std::cout << "Horarios disponibles:\n";
+    for (int i = 0; i < hourCount; i++) {
+        std::cout << "Bloque " << i + 1 << ": "
+            << availableHours[i][0] << ":00 - "
+            << availableHours[i][1] << ":00\n";
+    }
+
+    std::cout << "Asignación de cursos:\n";
+    for (int i = 0; i < 5; i++) {
+        if (!coursePerSchedule[i].empty()) {
+            std::cout << "Bloque " << i + 1 << ": " << coursePerSchedule[i] << "\n";
+        }
+    }
 }
 
-int Schedule::getClassroom()
-{
-	return ClassRoom;
-}
+    void Schedule::setScheduleDetails(int hourInicial, int hourFinal, int classroom, std::string day) {
+        this->hourInicial = hourInicial;
+        this->hourFinal = hourFinal;
+        this->classRoom = classroom;
+         this->day= day;
+    }
 
-int Schedule::getHourFinal()
-{
-	return hourFinal;
-}
 
-std::string Schedule::getDay()
-{
-	return Day;
-}
 
-void Schedule::setHourInicial(int hour_Inicial)
-{
-	this->hourInicial = hour_Inicial;
-}
+    void Schedule::assignCourseToSchedule(std::string coursePerSchedule[5], int scheduleIndex, std::string courseName) {
+            if (scheduleIndex >= 0 && scheduleIndex < 5) {  // Suponiendo que hay 5 horarios disponibles
+                coursePerSchedule[scheduleIndex] = courseName;
+            }
+            else {
+                std::cout << "Índice de horario inválido.\n";
+            }
+    }
 
-void Schedule::setClassroom(int classroom)
-{
-	this->ClassRoom = classroom;
-}
 
-void Schedule::setHourFinal(int hour_Final)
-{
-	this->hourFinal = hour_Final;
-}
+    int Schedule::getcalculateDuration(){
+        return hourFinal - hourInicial;
+    }
 
-void Schedule::setDay(std::string day)
-{
-	this->Day = day;
-}
 
-void Schedule:: initializeSchedules(std::string schendules[5])
-{
-	
-		this->Schendules[0] = "Lunes";
-		this->Schendules[1] = "Martes";
-		this->Schendules[2] = "Miercoles";
-		this->Schendules[3] = "Jueves";
-		this->Schendules[4] = "Viernes";
-}
+    bool Schedule::isHourAvailable(int availableHours[5][2], int hourCount, int hourInicial, int hourFinal) {
+        for (int i = 0; i < hourCount; i++) {
+            if (availableHours[i][0] == hourInicial && availableHours[i][1] == hourFinal) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-void Schedule::getHours(int hours[9][2])
-{
-	hours[0][0] = 8;  hours[0][1] = 11;
-	hours[1][0] = 9;  hours[1][1] = 11;
-	hours[2][0] = 10; hours[2][1] = 11;
-	hours[3][0] = 11; hours[3][1] = 12;
-	hours[4][0] = 1;  hours[4][1] = 3;
-	hours[5][0] = 2;  hours[5][1] = 4;
-	hours[6][0] = 3;  hours[6][1] = 5;
-	hours[7][0] = 4;  hours[7][1] = 6;
-	hours[8][0] = 5;  hours[8][1] = 7;
-}
 
