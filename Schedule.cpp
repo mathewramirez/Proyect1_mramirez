@@ -57,14 +57,14 @@ void Schedule::setDay(std::string day)
 	this->Day = day;
 }
 
-void Schedule:: initializeSchedules() (int hour_Inicial, int classroom, int hour_Final, std::string day) 
+void Schedule:: initializeSchedules(std::string schendules[5])
 {
 	
-		Schendules[0] = "Lunes";
-		Schendules[1] = "Martes";
-		Schendules[2] = "Miercoles";
-		Schendules[3] = "Jueves";
-		Schendules[4] = "Viernes";
+		this->Schendules[0] = "Lunes";
+		this->Schendules[1] = "Martes";
+		this->Schendules[2] = "Miercoles";
+		this->Schendules[3] = "Jueves";
+		this->Schendules[4] = "Viernes";
 }
 
 void Schedule::getHours(int hours[9][2])

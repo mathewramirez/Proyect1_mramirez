@@ -21,7 +21,7 @@ public:
 	void setClassroom(int classroom);
 	void setHourFinal(int hour_Final);
 	void setDay(std::string day);
-	void initializeSchedules(int hour_Inicial, int classroom, int hour_Final, std::string day);
+	void initializeSchedules(std::string schendules[5]);
 	void getHours(int hours[9][2]);
 };
 

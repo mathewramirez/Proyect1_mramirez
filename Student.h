@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-
 class Student
 {
 private:
@@ -19,5 +18,6 @@ public:
 	void setId(std::string id);
 	void setCareer(std:: string career);
 	void setLevel(int level);
+	void ShowStudent(std::string name, std::string id, std::string career, int level);
 };
 
