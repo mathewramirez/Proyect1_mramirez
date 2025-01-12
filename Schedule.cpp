@@ -2,14 +2,14 @@
 
 Schedule::Schedule()
 {
-	Day = 0;
+	Day = "";
 	ClassRoom = 0;
 	hourFinal = 0;
 	hourInicial =0 ;
 }
 
 
-Schedule::Schedule(int hour_Inicial, int classroom, int hour_Final, int day)
+Schedule::Schedule(int hour_Inicial, int classroom, int hour_Final, std::string day)
 {
 	this->Day = day;
 	this->ClassRoom = classroom;
@@ -32,7 +32,7 @@ int Schedule::getHourFinal()
 	return hourFinal;
 }
 
-int Schedule::getDay()
+std::string Schedule::getDay()
 {
 	return Day;
 }
@@ -52,7 +52,31 @@ void Schedule::setHourFinal(int hour_Final)
 	this->hourFinal = hour_Final;
 }
 
-void Schedule::setDay(int day)
+void Schedule::setDay(std::string day)
 {
 	this->Day = day;
 }
+
+void Schedule:: initializeSchedules() (int hour_Inicial, int classroom, int hour_Final, std::string day) 
+{
+	
+		Schendules[0] = "Lunes";
+		Schendules[1] = "Martes";
+		Schendules[2] = "Miercoles";
+		Schendules[3] = "Jueves";
+		Schendules[4] = "Viernes";
+}
+
+void Schedule::getHours(int hours[9][2])
+{
+	hours[0][0] = 8;  hours[0][1] = 11;
+	hours[1][0] = 9;  hours[1][1] = 11;
+	hours[2][0] = 10; hours[2][1] = 11;
+	hours[3][0] = 11; hours[3][1] = 12;
+	hours[4][0] = 1;  hours[4][1] = 3;
+	hours[5][0] = 2;  hours[5][1] = 4;
+	hours[6][0] = 3;  hours[6][1] = 5;
+	hours[7][0] = 4;  hours[7][1] = 6;
+	hours[8][0] = 5;  hours[8][1] = 7;
+}
+

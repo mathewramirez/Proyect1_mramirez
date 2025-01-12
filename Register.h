@@ -8,7 +8,9 @@ class Register
 private:
 	Student studentPresent[30];
 	Course coursePresent[5];
+	Course  courseDefined[5];
 	Schedule schedulePresent[12];
+	Schedule scheduleDefined[5];
 	int courseCount;
 	int courseValue;
 	int studentsCount;
@@ -25,5 +27,7 @@ public:
 	void ShowstudentPresent();
 	void courseofLevel(int level);
 	void setCoursePresents(int courseCount); 
+	void courseDefined(std::string courseDefined[]);
+
 };
 

@@ -2,9 +2,9 @@
 
 Course::Course()
 {
-	 Professor=" ";
-      Code=" ";
-	nameCourse=" ";
+	 Professor="";
+      Code="";
+	nameCourse="";
 	Credits=0;
 }
 
@@ -57,7 +57,8 @@ void Course::setCredits(int credits)
 	this->Credits = credits; 
 }
 
-    void loadCourses(std::string Courses[NUM_COURSES][COURSE_COLUMNS]) { 
+void loadCourses(std::string(&Courses)[NUM_COURSES][COURSE_COLUMNS])
+{
         Courses[0][0] = "CS101";   Courses[0][1] = "Programación Básica";
         Courses[1][0] = "MATH204"; Courses[1][1] = "Cálculo II";
         Courses[2][0] = "PHY301";  Courses[2][1] = "Física Moderna";

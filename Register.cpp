@@ -78,4 +78,15 @@ void Register::setCoursePresents(int courseCount)
 	coursePresent[courseCount];
 }
 
+void Register::courseDefined(std::string courseDefined[])
+{
+	courseDefined[0] = "CS101";  courseDefined[5] = "Programación Básica";
+	courseDefined[1] = "MATH204"; courseDefined[6] = "Cálculo II";
+	courseDefined[2] = "PHY301";  courseDefined[7] = "Física Moderna";
+	courseDefined[3] = "CHEM150"; courseDefined[8] = "Química General";
+	courseDefined[4] = "ENG202";  courseDefined[9] = "Inglés Técnico";
+}
+
+
+
 

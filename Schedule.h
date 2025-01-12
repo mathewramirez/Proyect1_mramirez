@@ -1,23 +1,27 @@
 #pragma once
 #include "Course.h"
+#include <iostream>
 class Schedule
 {
 private:
+	std::string Schendules[5];
 	int hourInicial;
 	int ClassRoom;
 	int hourFinal;
-	int Day;
+	std::string Day;
+	int hours[9][2];
 public:
 	Schedule();
-	Schedule(int hour_Inicial, int classroom, int hour_Final, int day);
+	Schedule(int hour_Inicial, int classroom, int hour_Final, std::string day);
 	int getHourInicial();
 	int getClassroom();
 	int getHourFinal();
-	int getDay();
+	std::string getDay();
 	void setHourInicial(int hour_Inicial);
 	void setClassroom(int classroom);
 	void setHourFinal(int hour_Final);
-	void setDay(int day);
-	
+	void setDay(std::string day);
+	void initializeSchedules(int hour_Inicial, int classroom, int hour_Final, std::string day);
+	void getHours(int hours[9][2]);
 };
 
