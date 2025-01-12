@@ -14,18 +14,36 @@ private:
 	std::string nameCourse;
 	int Credits;
 public:
-	Course();
-	Course(std::string professor, std::string code, std::string name_Course, int credits);
-	std::string getProfessor();
-	std::string getCode();
-	std::string getnameCourse();
-	int getCredits();
-	void setProfessor(std::string professor);
-	void setCode(std::string code);
-	void setnameCourse(std::string name_Course);
-	void setCredits(int credits);
-	void loadCourses(std::string Courses[NUM_COURSES][COURSE_COLUMNS]);
-	bool validCourse(std::string code, std::string Courses[NUM_COURSES][COURSE_COLUMNS]);
-	void showCourses();
+
+    Course(){}
+
+    // Constructor parametrizado
+    Course(const std::string& prof, const std::string& code, const std::string& name, int credits)
+    {
+    }
+
+    // Setters
+    void setProfessor(const std::string& prof){  }
+    void setCode(const std::string& code) {}
+    void setNameCourse(std::string& name) {}
+    void setCredits(int credits) {  }
+
+    std::string getCode(){}
+    std::string getNameCourse(){}
+    int getCredits(){}
+    std::string getProfessor(){}
+
+    // Metodo para agregar información a Courses
+    void setCourseInfo(int index, const std::string& col1, const std::string& col2, const std::string& col3) {
+    }
+
+    // Metodo para mostrar información de Courses
+    void displayCourses(){ }
+
+    // Metodo para mostrar información del curso
+    void displayCourseInfo(){
+    }
 };
+
+
 

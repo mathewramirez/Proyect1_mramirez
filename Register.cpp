@@ -48,7 +48,7 @@ void Register::showStudentPresent(Student studentPresent[30]) {
 
 void Register::showCoursePresent(Course coursePresent[5]) {
     for (int i = 0; i < courseCount; i++) {
-        coursePresent[i].showCourses();
+        coursePresent[i].displayCourseInfo();
     }
 }
 
@@ -62,8 +62,8 @@ void Register::costCalculator(Course coursePresent[5]) {
 
 void Register::setCourseDefined(Course courseDefined[5][2], std::string code1, std::string code2, int index) {
     if (index >= 0 && index < 5) {
-        courseDefined[index][0].setCode(code1);
-        courseDefined[index][1].setCode(code2);
+        courseDefined[index][0].setCode(code1); 
+        courseDefined[index][1].setCode(code2); 
     }
     else {
         std::cout << "Índice fuera de rango.\n";

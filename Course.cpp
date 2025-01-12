@@ -1,88 +1,83 @@
 #include "Course.h"
 #include <iostream>
-Course::Course()
-{
-	 Professor="";
-      Code="";
-	nameCourse="";
-	Credits=0;
+// Constructor por defecto
+Course::Course() {
+    Professor = "";
+    Code = "";
+    nameCourse="";
+    Credits = 0;
 }
 
-Course::Course(std::string professor, std::string code, std::string name_Course, int credits)
-{
-	this->Professor= professor;
-	this->Code=code ;
-	this->nameCourse =name_Course ;
-	this->Credits =credits ;
+// Constructor parametrizado
+Course::Course(const std::string& prof, const std::string& code, const std::string& name, int credits)
+    : Professor(prof), Code(code), nameCourse(name), Credits(credits) {
 }
 
-std::string Course::getProfessor()
-{
-	return Professor;
+// Setters
+void Course::setProfessor(const std::string& prof) { 
+    Professor = prof; 
+}
+void Course::setCode(const std::string& code) { 
+    Code = code; 
+}
+void Course::setNameCourse(std::string& name) {
+    nameCourse = name; 
+}
+void Course::setCredits(int credits) { 
+    Credits = credits; 
 }
 
-std::string Course::getCode()
-{
-	return Code;
-}
-
-std::string Course::getnameCourse()
-{
-	return nameCourse; 
-}
-
-int Course::getCredits()
-{
-	return Credits; 
-}
-
-void Course::setProfessor(std::string professor)
-{
-	this->Professor = professor;
+// Getters
+std::string Course::getProfessor() { 
+    return Professor; 
 }
 
 
-void Course::setCode(std::string code)
-{
-	this->Code = code;
+std::string Course::getCode() {
+    return Code; 
 }
 
-void Course::setnameCourse(std::string name_Course)
-{
-	this->nameCourse = name_Course;
+
+std::string Course::getNameCourse() { 
+    return nameCourse; 
+}
+int Course::getCredits() { 
+    return Credits; 
 }
 
-void Course::setCredits(int credits)
-{
-	this->Credits = credits; 
+// Metodo para agregar información a Courses
+void Course::setCourseInfo(int index, const std::string& col1, const std::string& col2, const std::string& col3) {
+    if (index >= 0 && index < NUM_COURSES) {
+        Courses[index][0] = col1;
+        Courses[index][1] = col2;
+        Courses[index][2] = col3;
+    }
+    else {
+        std::cout << "Índice fuera de rango. No se puede agregar la información del curso." << std::endl;
+    }
 }
 
-void Course::loadCourses(std::string Courses[NUM_COURSES][COURSE_COLUMNS])
-{
-        Courses[0][0] = "CS101";   Courses[0][1] = "Programación Básica";
-        Courses[1][0] = "MATH204"; Courses[1][1] = "Cálculo II";
-        Courses[2][0] = "PHY301";  Courses[2][1] = "Física Moderna";
-        Courses[3][0] = "CHEM150"; Courses[3][1] = "Química General";
-        Courses[4][0] = "ENG202";  Courses[4][1] = "Inglés Técnico";
-}
-
-    bool Course::validCourse(std::string code, std::string Courses[NUM_COURSES][COURSE_COLUMNS]) {
-        for (int i = 0; i < NUM_COURSES; i++) {
-            if (Courses[i][0] == code) {
-                std::cout << "Curso encontrado: " << Courses[i][1] << " [" << Courses[i][0] << "]\n";
-                return true;
-            }
+// Metodo para mostrar información de Courses
+void Course::displayCourses()  {
+    std::cout << "Listado de Cursos:\n";
+    std::cout << "Columna 1\tColumna 2\tColumna 3\n";
+    for (int i = 0; i < NUM_COURSES; ++i) {
+        if (!Courses[i][0].empty()) {
+            std::cout << Courses[i][0] << "\t" << Courses[i][1] << "\t" << Courses[i][2] << std::endl;
         }
-        std::cout << "Error: Código de curso no encontrado.\n";
-        return false;
     }
-    void Course::showCourses() {
-        std::cout << "Profesor: " << Professor << "\n"
-            << "Código del Curso: " << Code << "\n"
-            << "Nombre del Curso: " << nameCourse << "\n"
-            << "Créditos: " << Credits << "\n"
-            << "------------------------------\n";
-    }
+}
+
+
+// Metodo para mostrar información del curso
+void Course::displayCourseInfo() {
+    std::cout << "Información del Curso:\n";
+    std::cout << "Nombre: " << nameCourse << "\n";
+    std::cout << "Código: " << Code << "\n";
+    std::cout << "Profesor: " << Professor << "\n";
+    std::cout << "Créditos: " << Credits << "\n";
+}
+
 
   
 
