@@ -24,7 +24,6 @@ public:
     void showStudentPresent(Student studentPresent[30]);
     void showCoursePresent(Course coursePresent[5]);
     void costCalculator(Course coursePresent[5]);
-    void setCourseDefined(Course courseDefined[5][2], std::string code1, std::string code2, int index);
 
 };
 

@@ -1,6 +1,6 @@
 #include "Course.h"
 #include <iostream>
-// Constructor por defecto
+
 Course::Course() {
     Professor = "";
     Code = "";
@@ -14,6 +14,24 @@ this->Professor = prof;
 this->Code = code;
 this->nameCourse = name;
 this->Credits = credits;
+}
+void Course::setCode(const std::string& code)
+{
+    this->Code = code;
+
+}
+void Course::setNameCourse(const std::string& name)
+{
+    this->nameCourse = name;
+}
+void Course::setcredits(int credits)
+{
+    this->Credits = credits;
+}
+void Course::setProfessor(const std::string& prof)
+{
+    this->Professor = prof;
+
 }
 std::string Course::getProfessor() const {
     return Professor; 

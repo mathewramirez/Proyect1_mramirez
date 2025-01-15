@@ -32,7 +32,7 @@ void Register::addCourse(Course coursePresent[5], std::string professor, std::st
 
 void Register::addSchedule(Schedule schedulePresent[12], int hour_Inicial, int classroom, int hour_Final, std::string day) {
     if (scheduleCount < 12) {
-        schedulePresent[scheduleCount].setScheduleDetails(hour_Inicial, hour_Final, classroom, day);
+        schedulePresent[scheduleCount].Schedule::Schedule(hour_Inicial, hour_Final, classroom, day);
         scheduleCount++;
     }
     else {
@@ -48,7 +48,7 @@ void Register::showStudentPresent(Student studentPresent[30]) {
 
 void Register::showCoursePresent(Course coursePresent[5]) {
     for (int i = 0; i < courseCount; i++) {
-        coursePresent[i].displayCourseInfo();
+        coursePresent[i].getNameCourse();
     }
 }
 
@@ -60,15 +60,7 @@ void Register::costCalculator(Course coursePresent[5]) {
     std::cout << "Costo total del registro: " << totalCost << "\n";
 }
 
-void Register::setCourseDefined(Course courseDefined[5][2], std::string code1, std::string code2, int index) {
-    if (index >= 0 && index < 5) {
-        courseDefined[index][0].setCode(code1); 
-        courseDefined[index][1].setCode(code2); 
-    }
-    else {
-        std::cout << "Índice fuera de rango.\n";
-    }
-}
+
 
 
 

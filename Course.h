@@ -12,7 +12,10 @@ private:
 public:
     Course();
     Course(const std::string& prof, const std::string& code, const std::string& name, int credits);
-
+    void setProfessor(const std::string& prof);
+    void setCode(const std::string& code);
+    void setNameCourse(const std::string& name);
+    void setcredits(int credits);
     std::string getCode() const;
     std::string getNameCourse() const;
     int getCredits() const;
