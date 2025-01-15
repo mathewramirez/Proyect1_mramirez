@@ -225,10 +225,13 @@ void Program::program()
             switch (sub_option) {
             case '1':
                 reg.showCoursePresent();
+                system("PAUSE");
             case '2':
                 reg.showStudentPresent();
+                system("PAUSE");
                 break;
             case '3':
+                return;
                 break;
             default:
                 std::cout << "Opcion no valida, intente de nuevo." << std::endl;

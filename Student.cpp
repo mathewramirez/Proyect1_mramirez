@@ -56,11 +56,11 @@ void Student::setLevel(int level)
 	this->Level = level;
 }
 void Student::ShowStudent(){
-	Student student;
-	std::cout << "Nombre: " << student.getName() << "\n"
-		<< "ID: " <<student.getId() << "\n"
-		<< "Carrera: " << student.getCareer() << "\n"
-		<< "Nivel: " << student.getLevel() << "\n"
+
+	std::cout << "Nombre: " << getName() << "\n"
+		<< "ID: " <<getId() << "\n"
+		<< "Carrera: " << getCareer() << "\n"
+		<< "Nivel: " << getLevel() << "\n"
 		<< "------------------------------\n";
 }
 
