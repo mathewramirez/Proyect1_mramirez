@@ -9,9 +9,10 @@
 
 int main()
 {
+    Program program;
     char option;
-   /* while (!exitProgram) {
-        clearScreen();
+    while (true) {
+        system("CLS");
         std::cout << "======== Menu ========" << std::endl;
         std::cout << "a) Archivo" << std::endl;
         std::cout << "b) Mantenimiento" << std::endl;
@@ -27,20 +28,18 @@ int main()
 
         switch (option) {
         case 'a':
-            showFileMenu();
+            program.showFileMenu();
             break;
         case 'b':
-            ShowMaintenanceMenu();
+            program.ShowMaintenanceMenu();
             break;
-        case 'c':
-        Consult();
         break;
         default:
             std::cout << "Opcion no valida, intente de nuevo." << std::endl;
             break;
         }
     }
-    return 0;*/
+    return 0;
 }
 
 

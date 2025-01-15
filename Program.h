@@ -8,9 +8,7 @@ class Program
 { 
 public:
 	void program();
-	void pauseForUser();
 	void showFileMenu();
 	void ShowMaintenanceMenu();
-
 };
 
