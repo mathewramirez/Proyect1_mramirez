@@ -1,26 +1,23 @@
 #include "Schedule.h"
 
 
-
-
-Schedule::Schedule(){ 
-    this->hourInicial = 0;
-  this->hourFinal = 0;
- this->classRoom = 0;
-    this->hourCount=0;
-       this->day= "";  
+Schedule::Schedule() {
+    hourInicial = 0;
+    hourFinal = 0;
+    classRoom = 0;
+    day = "";
 
 }
-void Schedule::addAvailableHour(int availableHours[5][2], int& hourCount, int hourInicial, int hourFinal) {
-    if (hourCount < 5) {
-        availableHours[hourCount][0] = hourInicial;
-        availableHours[hourCount][1] = hourFinal;
-        hourCount++;
-    }
-    else {
-        std::cout << "No se pueden agregar más bloques de horarios.\n";
-    }
+
+
+Schedule::Schedule(int hourInicial, int hourFinal, int class_Room, std::string& day){
+this->hourInicial = 0;
+this->hourFinal = 0;
+this->classRoom = 0;
+this->day= "";  
+
 }
+
 
 void Schedule::displaySchedule(int availableHours[5][2], std::string coursePerSchedule[5]) {
     std::cout << "Día: " << day << "\n"
