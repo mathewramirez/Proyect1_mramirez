@@ -51,21 +51,9 @@ void Program::program()
     void Program::ShowMaintenanceMenu() {
         char option;
         Register registeer;
-        Student student;
-        std::string name;
-        std::string id;
-        std::string career;
-        int level;
         Course course;
-        std::string nameCourse;
-        std::string code;
-        std::string Professor;
-        int credits;
         Schedule schedule;
-        std::string day;
-        int HourInicial;
-        int HourFinal;
-        int classroom;
+
 
         while (true) {
             system("CLS");
@@ -105,19 +93,6 @@ void Program::program()
 
                     switch (subOption) {
                     case '1':
-                        std::cout << "1) Registrar Nombre" << std::endl;
-                        std::cin >> name;
-                        student.setName(name);
-                        std::cout << "2) Registrar Cedula" << std::endl;
-                        std::cin >> id;
-                        student.setId(id);
-            
-                        std::cout << "3) Registrar carrera" << std::endl;
-                        std::cin >> career;
-                        student.setCareer(career);
-                        std::cout << "4) Registrar nivel" << std::endl;
-                        std::cin >> level;
-                        student.setLevel(level);
                         registeer.addStudents();
                         break;
                     case '2':
@@ -148,18 +123,7 @@ void Program::program()
 
                     switch (subOption) {
                     case '1':
-                        std::cout << "Registrar Nombre del curso" << std::endl;
-                        std::cin >> nameCourse;
-                        course.setNameCourse(nameCourse);
-                        std::cout << "Registrar Codigo" << std::endl;
-                        std::cin >> code;
-                        course.setCode(code);
-                        std::cout << "Registrar creditos" << std::endl;
-                        std::cin >> credits;
-                        course.setcredits(credits);
-                        std::cout << "Registrar Nombre de profesor" << std::endl;
-                        std::cin >> Professor;
-                        course.setProfessor(Professor);
+                        registeer.addCourse();
                         break;
                     case '2':
                         return;
@@ -189,18 +153,7 @@ void Program::program()
 
                     switch (subOption) {
                     case '1':
-                        std::cout << "Registrar dia" << std::endl;
-                        std::cin >> day;
-                        schedule.setDay(day);
-                        std::cout << "Registrar hora inicial" << std::endl;
-                        std::cin >> HourInicial;
-                        schedule.setHourInicial(HourInicial);
-                        std::cout << "Registrar hora final" << std::endl;
-                        std::cin >> HourFinal;
-                        schedule.setHourFinal(HourFinal);
-                        std::cout << "Registrar aula" << std::endl;
-                        std::cin >> classroom;
-                        schedule.setClassroom(classroom);
+                        registeer.addSchedule();
                         break;
                     case '2':
                         return;
@@ -212,14 +165,69 @@ void Program::program()
                 break;
             }
             case '4':
-                // Código de Matricula
-                break;
-            case '5':
-                // Código de Consulta
-                break;
-            default:
-                std::cout << "Opcion no valida, intente de nuevo." << std::endl;
-                break;
+                
+                int option;
+                std::cout << "\n=== Sistema de Matricula ===" << std::endl;
+                std::cout << "1) Registrar Curso" << std::endl;
+                std::cout << "3) Salir" << std::endl;
+                std::cout << "Seleccione una opcion: ";
+                std::cin >> option;
+
+                switch (option) {
+                case 1: {
+                    std::string code, name, professor;
+                    int credits;
+                    std::cout << "Ingrese el código del curso: ";
+                    std::cin >> code;
+                    std::cout << "Ingrese el nombre del curso: ";
+                    std::cin, name;
+                    std::cout << "ingrese Profesor: ";
+                    std::cin >> professor;
+                    std::cout << "Ingrese credits: ";
+                    std::cin >> credits;
+
+                    Course newCourse(professor, code, name, credits);
+                    registeer.addCourse();
+                    break;
+                }
+                case 2:
+                    registeer.showCoursePresent();
+                    break;
+                case 3:
+                    std::cout << "Saliendo del programa..." << std::endl;
+                    break;
+                default:
+                    std::cout << "Opcion no valida. Intente de nuevo." << std::endl;
+                }
+
+
+            case 5:
+                Register reg;
+                char sub_option=0;
+                std::cout << "=== Consulta ===" << std::endl;
+                std::cout << "1) mostrar cursos asignados" << std::endl;
+                std::cout << "2) mostrar estudiantes matriculados" << std::endl;
+                std::cout << "Ingrese alguna opcion disponible: " << std::endl;
+                std::cin >> option;
+
+                if (std::cin.fail() || std::cin.peek() != '\n') {
+                    std::cout << "Error: entrada no valida." << std::endl;
+                    std::cin.clear();
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    continue;
+                }
+
+                switch (sub_option) {
+                case '1':
+                    reg.showCoursePresent();
+                case '2':
+                    reg.showStudentPresent();
+                    break;
+                default:
+                    std::cout << "Opcion no valida, intente de nuevo." << std::endl;
+                    break;
+                }
             }
         }
     }
+    

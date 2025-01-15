@@ -10,6 +10,8 @@ private:
     Course courseDefined[5][2];
     Schedule schedulePresent[12];
     Schedule scheduleDefined[5];
+    Course newCourse;
+  
     int courseCount = 0;
     int courseValue = 0;
     int studentsCount = 0;
@@ -19,12 +21,12 @@ private:
 public:
 	Register();
     void addStudents();
-    void addCourse();
+   void addCourse();
     void addSchedule();
     void showStudentPresent();
     void showCoursePresent();
     void costCalculator();
-    bool hasScheduleConflict();
+ 
 };
 
 

@@ -28,6 +28,22 @@ void Course::setcredits(int credits)
 {
     this->Credits = credits;
 }
+void Course::setHourFinal(int Hourfinal)
+{
+    this->Hourfinal = Hourfinal;
+}
+void Course::setHourInicial(int HourInicial)
+{
+    this->HourInicial= HourInicial;
+}
+int Course::getHourInicial() const
+{
+    return HourInicial;
+}
+int Course::getHourFinal() const
+{
+    return Hourfinal;
+}
 void Course::setProfessor(const std::string& prof)
 {
     this->Professor = prof;

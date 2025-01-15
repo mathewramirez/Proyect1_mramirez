@@ -39,34 +39,71 @@ void Register::addStudents() {
     
 }
 
-void Register::addCourse() {
-    std::string professor, code, name_Course;
-    int credits=0;
+    void Register::addCourse() {
+        std::string professor, code, name_Course;
+        int credits = 0, hourInicial = 0, hourFinal = 0, classroom = 0;
 
-        if (courseCount < 5) { // Asegura que no exceda el tamaño del arreglo
+        if (courseCount < 5) { 
+            Schedule newSchedule;
+            Register re; 
             Course newCourse;
 
-            std::cout << "Ingrese el nombre del curso:  " << std::endl; 
-            std::cin >> name_Course;
+
+            std::cout << "Ingrese el nombre del curso: ";
+            std::cin.ignore();
+            std::cin, name_Course;
             newCourse.setNameCourse(name_Course);
 
-            std::cout << "Ingrese el nombre del profesor: " << std::endl; ;
-            std::cin >> professor;
+            std::cout << "Ingrese el nombre del profesor: ";
+            std::cin, professor;
             newCourse.setProfessor(professor);
 
-            std::cout << "Ingrese el code: ";
+            std::cout << "Ingrese el código del curso: ";
             std::cin >> code;
             newCourse.setCode(code);
 
-            std::cout << "Ingrese el número de credits: " << std::endl; ;
+            std::cout << "Ingrese el número de créditos: ";
             std::cin >> credits;
             newCourse.setcredits(credits);
-            coursePresent[courseCount++] = newCourse;
+
+          
+            std::cout << "Ingrese la hora inicial del curso (formato 24h): ";
+            std::cin >> hourInicial;
+            newSchedule.setHourInicial(hourInicial);
+
+            std::cout << "Ingrese la hora final del curso (formato 24h): ";
+            std::cin >> hourFinal;
+            newSchedule.setHourFinal(hourFinal);
+
+            std::cout << "Ingrese el aula del curso: ";
+            std::cin >> classroom;
+            newSchedule.setClassroom(classroom);
+
+
+            bool hasConflict = false;
+            for (int i = 0; i < courseCount; i++) {
+
+                bool overlap =
+                    (hourInicial < coursePresent[i].getHourFinal() &&
+                        hourFinal > coursePresent[i].getHourInicial());
+
+            }
+
+            if (!hasConflict) {
+                coursePresent[courseCount++] = newCourse;
+                std::cout << "Curso agregado exitosamente.\n";
+            }
+            else {
+                std::cout << "No se pudo agregar el curso debido a un conflicto de horarios.\n";
+            }
+
         }
         else {
             std::cout << "No se pueden agregar más cursos, el límite está alcanzado.\n";
         }
-}
+    }
+
+
     
 
 
@@ -115,15 +152,6 @@ void Register::costCalculator() {
         totalCost += coursePresent[i].getCredits() * courseValue;
     }
     std::cout << "Costo total del registro: " << totalCost << "\n";
-}
-
-bool Register::hasScheduleConflict() {
-    for (int i = 0; i < courseCount; ++i) {
-        if (coursePresent[i] == newCourse) {
-            return true;
-        }
-    }
-    return false;
 }
 
 
