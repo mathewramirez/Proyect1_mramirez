@@ -16,7 +16,8 @@ int main()
         std::cout << "======== Menu ========" << std::endl;
         std::cout << "a) Archivo" << std::endl;
         std::cout << "b) Mantenimiento" << std::endl;
-        std::cout << "c) consulta" << std::endl;
+        std::cout << "c) Matricula" << std::endl;
+        std::cout << "d) Consulta" << std::endl;
         std::cout << "Ingrese alguna opcion disponible: " << std::endl;
         std::cin >> option;
         if (std::cin.fail() || std::cin.peek() != '\n') {
@@ -32,6 +33,12 @@ int main()
             break;
         case 'b':
             program.ShowMaintenanceMenu();
+            break;
+        case 'c':
+            program.showMenuregister();
+            break;
+        case 'd':
+            program.showconsult();
             break;
         break;
         default:

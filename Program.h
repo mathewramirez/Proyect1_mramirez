@@ -10,6 +10,8 @@ public:
 	void program();
 	void showFileMenu();
 	void ShowMaintenanceMenu();
+	void showMenuregister();
+	void showconsult();
 
 };
 
